@@ -7,5 +7,5 @@ const API_BASE = (() => {
   if (host === 'localhost' || host === '127.0.0.1') {
     return 'http://localhost:3000';
   }
-  return 'https://bookmydecor-node-api.onrender.com';
+  return 'https://bookmydecor-ai-service-api.onrender.com';
 })();
