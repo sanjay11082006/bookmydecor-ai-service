@@ -1,0 +1,32 @@
+SERVICE:
+Engagement
+
+BUSINESS:
+PR Decorations
+
+STARTING PRICE:
+₹10,000 starting price
+
+BASIC PACKAGE INCLUDES:
+- Flower/balloon decoration (standard ceremony setup)
+
+CUSTOMIZATION:
+Customers can request customized themes and decoration styles.
+
+CUSTOMER REQUIREMENTS:
+Prices vary according to customized themes and the customer's required add-ons.
+
+AVAILABLE ADD-ONS:
+- General add-ons — available based on customer requirement; refer to the Add-ons knowledge file for confirmed options and pricing.
+
+PRICING NOTE:
+₹10,000 is the starting price. The final price varies according to customer requirements and selected add-ons.
+
+GENERAL ADD-ON RULE:
+Add-ons can be combined with services based on customer requirements.
+
+SOURCE:
+Information collected directly from the PR Decorations owner.
+
+STATUS:
+Confirmed

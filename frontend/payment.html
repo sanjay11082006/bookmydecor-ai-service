@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookMyDecor | Complete Advance Payment</title>
+    <meta name="description" content="Complete your advance payment for PR Decorations booking." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="BookMyDecor home">
+          <span class="brand-mark">B</span>
+          <span>
+            <strong>BookMyDecor</strong>
+            <small>Decorations for every celebration</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a href="index.html#status">Check Status</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <a class="button button-secondary compact" href="index.html">Back to Site</a>
+      </div>
+    </header>
+
+    <main class="content-section">
+      <div class="container lookup-wrapper">
+        <div class="section-heading center">
+          <p class="eyebrow">Demo Payment Gateway</p>
+          <h2>Complete Advance Payment</h2>
+        </div>
+
+        <div id="payment-card" class="booking-card">
+          <div id="payment-loading" class="status-loading">Loading booking summary...</div>
+
+          <div id="payment-content" class="hidden">
+            <div class="status-card-info" style="margin-bottom: 1.5rem;">
+              <div class="status-header">
+                <span id="summary-status" class="status-badge confirmed">CONFIRMED</span>
+                <span id="summary-id" class="booking-id-tag">ID: -</span>
+              </div>
+              <h3 id="summary-service">Service Name</h3>
+              <ul class="status-details">
+                <li><strong>Customer:</strong> <span id="summary-customer">-</span></li>
+                <li><strong>Event Date:</strong> <span id="summary-date">-</span></li>
+                <li><strong>Selected Add-ons:</strong> <span id="summary-addons">None</span></li>
+                <li>
+                  <strong>Advance Amount Due:</strong>
+                  <span id="summary-advance" style="font-size: 1.1rem; color: var(--primary); font-weight: 700;">₹0</span>
+                </li>
+              </ul>
+              <p class="fine-print" style="margin-top: 0.8rem;">
+                ℹ 25% advance — non-refundable if cancelled.
+              </p>
+            </div>
+
+            <form id="payment-form" novalidate>
+              <label>
+                <span>Select Payment Method (Simulation)</span>
+              </label>
+
+              <div class="checkbox-list" style="max-height: none; gap: 0.8rem; padding: 0.8rem;">
+                <label class="checkbox-option">
+                  <input type="radio" name="paymentMethod" value="upi" checked />
+                  <span>📱 <strong>UPI / QR Code</strong> (GPay, PhonePe, Paytm)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="radio" name="paymentMethod" value="card" />
+                  <span>💳 <strong>Credit / Debit Card</strong> (Visa, MasterCard, RuPay)</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="radio" name="paymentMethod" value="netbanking" />
+                  <span>🏦 <strong>Net Banking</strong> (SBI, HDFC, ICICI, Axis)</span>
+                </label>
+              </div>
+
+              <div style="margin-top: 1rem;">
+                <button type="submit" class="button button-primary full-width" id="pay-button">
+                  Pay ₹0
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div id="payment-error" class="status-card-error hidden" style="margin-top: 1rem;">
+            <p><strong>⚠ <span id="error-text">No booking ID supplied.</span></strong></p>
+            <p class="error-hint">Enter your Booking ID below to complete payment:</p>
+
+            <form id="manual-id-form" style="display: flex; gap: 0.5rem; margin-top: 0.8rem; flex-wrap: wrap;">
+              <input type="text" id="manual-id-input" placeholder="e.g. 1789752625037" required style="flex: 1; min-width: 200px;" />
+              <button type="submit" class="button button-primary">Load Booking</button>
+            </form>
+
+            <div style="margin-top: 1rem;">
+              <a href="index.html" class="button button-secondary">Return to Home</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="payment-success-card" class="success-card hidden" aria-live="polite" style="margin-top: 1.5rem;">
+          <div class="success-icon">✓</div>
+          <h3>Payment successful! Your booking is confirmed.</h3>
+          <p id="success-details-text">Your advance payment has been received and your booking status is updated to <strong>PAID</strong>.</p>
+          <div id="success-booking-id" class="booking-id-badge"></div>
+          <div style="margin-top: 1.2rem; display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center;">
+            <a href="index.html" class="button button-primary">Back to home</a>
+            <a href="index.html#status" class="button button-secondary">Check Booking Status</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="config.js"></script>
+    <script>
+      (function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        let bookingId = urlParams.get('booking_id') || sessionStorage.getItem('last_booking_id');
+
+        const elLoading = document.getElementById('payment-loading');
+        const elContent = document.getElementById('payment-content');
+        const elError = document.getElementById('payment-error');
+        const elErrorText = document.getElementById('error-text');
+        const elForm = document.getElementById('payment-form');
+        const elPayButton = document.getElementById('pay-button');
+        const elSuccessCard = document.getElementById('payment-success-card');
+        const elPaymentCard = document.getElementById('payment-card');
+        const elManualForm = document.getElementById('manual-id-form');
+        const elManualInput = document.getElementById('manual-id-input');
+
+        let currentBooking = null;
+
+        async function initPayment(idToLoad) {
+          const targetId = idToLoad || bookingId;
+
+          if (!targetId) {
+            showError('No booking ID supplied in URL parameter.');
+            return;
+          }
+
+          elLoading.classList.remove('hidden');
+          elError.classList.add('hidden');
+          elContent.classList.add('hidden');
+
+          try {
+            const response = await fetch(`${API_BASE}/booking/${targetId}`);
+            const data = await response.json();
+
+            if (!response.ok) {
+              throw new Error(data.error || `Booking with ID ${targetId} not found`);
+            }
+
+            currentBooking = data;
+            bookingId = targetId;
+
+            document.getElementById('summary-status').textContent = data.status.toUpperCase();
+            document.getElementById('summary-status').className = `status-badge ${data.status.toLowerCase()}`;
+            document.getElementById('summary-id').textContent = `ID: ${data.id}`;
+            document.getElementById('summary-service').textContent = data.service_name;
+            document.getElementById('summary-customer').textContent = `${data.customer_name} (${data.phone})`;
+            document.getElementById('summary-date').textContent = data.date;
+            document.getElementById('summary-addons').textContent = data.selected_addons && data.selected_addons.length ? data.selected_addons.join(', ') : 'None';
+            document.getElementById('summary-advance').textContent = `₹${data.advance_amount.toLocaleString('en-IN')}`;
+
+            elPayButton.textContent = `Pay ₹${data.advance_amount.toLocaleString('en-IN')}`;
+
+            elLoading.classList.add('hidden');
+
+            if (data.status === 'paid') {
+              showSuccessState();
+              return;
+            }
+
+            elContent.classList.remove('hidden');
+          } catch (err) {
+            showError(err.message);
+          }
+        }
+
+        function showError(msg) {
+          elLoading.classList.add('hidden');
+          elContent.classList.add('hidden');
+          elErrorText.textContent = msg;
+          elError.classList.remove('hidden');
+        }
+
+        function showSuccessState() {
+          elPaymentCard.classList.add('hidden');
+          document.getElementById('success-booking-id').innerHTML = `Booking ID: <strong>${bookingId}</strong>`;
+          elSuccessCard.classList.remove('hidden');
+        }
+
+        elManualForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const manualId = elManualInput.value.trim();
+          if (manualId) {
+            initPayment(manualId);
+          }
+        });
+
+        elForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (!currentBooking) return;
+
+          elPayButton.disabled = true;
+          elPayButton.innerHTML = '⌛ Processing payment...';
+
+          setTimeout(async () => {
+            try {
+              const res = await fetch(`${API_BASE}/booking/${bookingId}/payment`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+              });
+
+              const resData = await res.json();
+              if (!res.ok) {
+                throw new Error(resData.error || 'Payment update failed');
+              }
+
+              showSuccessState();
+            } catch (err) {
+              alert(`Payment processing failed: ${err.message}`);
+              elPayButton.disabled = false;
+              elPayButton.textContent = `Pay ₹${currentBooking.advance_amount.toLocaleString('en-IN')}`;
+            }
+          }, 1500);
+        });
+
+        initPayment();
+      })();
+    </script>
+  </body>
+</html>

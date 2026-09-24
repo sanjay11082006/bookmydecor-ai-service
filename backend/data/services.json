@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "name": "Marriage Package",
+    "starting_price": 80000,
+    "price_range": "₹80,000–₹13,00,000",
+    "included": [
+      "Haldi",
+      "Sangeet",
+      "Bride-to-be setup",
+      "Standard Flower Decoration"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Birthday Decoration",
+    "starting_price": 15000,
+    "price_range": "₹15,000+",
+    "included": [
+      "Balloon theme",
+      "Name decoration",
+      "Entries",
+      "Tables setup"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Home Decoration",
+    "starting_price": 10000,
+    "price_range": "₹10,000+",
+    "included": [
+      "Flower decoration (original flowers only at this tier)"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Naming Ceremony",
+    "starting_price": 10000,
+    "price_range": "₹10,000+",
+    "included": [
+      "Flower decoration",
+      "Balloon decoration",
+      "Boy/girl themed decoration"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sreemantham Ceremony",
+    "starting_price": 10000,
+    "price_range": "₹10,000+",
+    "included": [
+      "Flower/balloon decoration (standard ceremony setup)"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Engagement Decoration",
+    "starting_price": 10000,
+    "price_range": "₹10,000+",
+    "included": [
+      "Flower/balloon decoration (standard ceremony setup)"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Car Decoration",
+    "starting_price": 15000,
+    "price_range": "₹15,000+",
+    "included": [
+      "Flower/balloon decoration for car"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Temple Decoration",
+    "starting_price": 15000,
+    "price_range": "₹15,000+",
+    "included": [
+      "Flower/balloon decoration for temple"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "New Year Decoration",
+    "starting_price": 5000,
+    "price_range": "₹5,000+",
+    "included": [
+      "Flower/balloon decoration"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Festival Decoration",
+    "starting_price": 10000,
+    "price_range": "₹10,000+",
+    "included": [
+      "Flower/balloon decoration"
+    ]
+  }
+]

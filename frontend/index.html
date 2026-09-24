@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookMyDecor | Decorations for every celebration</title>
+    <meta
+      name="description"
+      content="BookMyDecor offers premium decoration packages for weddings, birthdays, home decor, naming ceremonies, and festive celebrations in Amalapuram, India."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="#home" aria-label="BookMyDecor home">
+          <span class="brand-mark">B</span>
+          <span>
+            <strong>BookMyDecor</strong>
+            <small>Decorations for every celebration</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#addons">Add-ons</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#availability">Availability</a>
+          <a href="#booking">Booking</a>
+          <a href="#status">Status</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="button button-primary compact" href="#booking">Check Availability</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Amalapuram, India</p>
+            <h1>Celebrate<br>beautifully,<br>from the first<br>welcome to<br>the final<br>farewell.</h1>
+            <p class="subheading">
+              Premium event styling for weddings, birthdays, temple functions, naming ceremonies, and festive decorations tailored to your vision.
+            </p>
+            <div class="cta-row">
+              <a class="button button-primary" href="#availability">Check Availability</a>
+              <button class="button button-secondary" type="button" data-chat-open>
+                Chat with us
+              </button>
+            </div>
+            <ul class="mini-stats" aria-label="Business stats">
+              <li><strong>6 AM–10 PM</strong><span>Daily support</span></li>
+              <li><strong>Custom</strong><span>Theme styling</span></li>
+              <li><strong>Local</strong><span>Amalapuram-based</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Decorative wedding setup showcase">
+            <div class="visual-card visual-card-floating">
+              <span class="floating-label">FLORAL ENTRY</span>
+              <strong class="floating-title">Theme décor</strong>
+            </div>
+            <div class="visual-card visual-card-main">
+              <span class="badge">WEDDING STYLING</span>
+              <h3 class="visual-main-title">Warm, festive<br>elegance</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="category-strip">
+        <div class="container category-grid" id="category-grid"></div>
+      </section>
+
+      <section class="trust-strip">
+        <div class="container trust-row">
+          <div>
+            <span class="label">Hours</span>
+            <strong id="hours-text">6 AM–10 PM daily</strong>
+          </div>
+          <div>
+            <span class="label">Call us</span>
+            <a id="phone-link-1" href="tel:9848593882">9848593882</a>
+          </div>
+          <div>
+            <span class="label">Location</span>
+            <strong id="location-text">Amalapuram</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="content-section">
+        <div class="container section-heading center services-heading-wrapper">
+          <p class="eyebrow">Services & pricing</p>
+          <h2>Elegant décor packages for every milestone</h2>
+          <div class="sort-controls">
+            <label for="service-sort-select" class="sort-label">Sort Packages:</label>
+            <select id="service-sort-select" class="sort-select">
+              <option value="default">Default Order</option>
+              <option value="low-high">Price: Low to High</option>
+              <option value="high-low">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+        <div class="container service-layout">
+          <div class="service-tabs" id="service-tabs" aria-label="Decoration packages"></div>
+          <div class="service-panels" id="service-panels"></div>
+        </div>
+      </section>
+
+      <section id="addons" class="content-section alt-bg">
+        <div class="container section-heading center">
+          <p class="eyebrow">Add-ons</p>
+          <h2>Personalize your setup</h2>
+        </div>
+        <div class="container add-ons-grid" id="add-ons-grid"></div>
+      </section>
+
+      <section id="gallery" class="content-section">
+        <div class="container section-heading center">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Our Work & Gallery</h2>
+        </div>
+
+        <div class="container" style="margin-bottom: 2rem;">
+          <div class="service-tabs" id="gallery-tabs" style="justify-content: center;">
+            <button class="service-tab active" data-category="All">All</button>
+            <!-- Categories injected by JS -->
+          </div>
+        </div>
+
+        <div class="container gallery-grid" id="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem;">
+          <!-- Images injected by JS -->
+        </div>
+        
+        <div id="gallery-empty" class="container hidden" style="text-align: center; padding: 4rem 0; color: var(--muted); font-size: 1.1rem; background: var(--panel); border-radius: var(--radius-md); border: 1px dashed var(--line);">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📷</div>
+          Photos coming soon for this category!
+        </div>
+      </section>
+
+      <!-- Lightbox (hidden by default via JS) -->
+      <div id="lightbox" class="hidden" style="position: fixed; inset: 0; background: rgba(30, 15, 10, 0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+        <button id="lightbox-close" style="position: absolute; top: 25px; right: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 45px; height: 45px; color: white; font-size: 1.8rem; cursor: pointer; transition: background 0.2s;">&times;</button>
+        <button id="lightbox-prev" style="position: absolute; left: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 55px; height: 55px; color: white; font-size: 2rem; cursor: pointer; transition: background 0.2s;">&#10094;</button>
+        
+        <img id="lightbox-img" src="" style="max-height: 85vh; max-width: 85vw; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); object-fit: contain;">
+        
+        <button id="lightbox-next" style="position: absolute; right: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 55px; height: 55px; color: white; font-size: 2rem; cursor: pointer; transition: background 0.2s;">&#10095;</button>
+      </div>
+
+      <section id="availability" class="content-section alt-bg">
+        <div class="container section-heading center">
+          <p class="eyebrow">Availability</p>
+          <h2>Plan your celebration in advance</h2>
+        </div>
+        <div class="container calendar-shell">
+          <div class="calendar-toolbar">
+            <button class="calendar-nav" type="button" aria-label="Previous month" data-month-nav="prev">←</button>
+            <h3 id="calendar-month-label">Month</h3>
+            <button class="calendar-nav" type="button" aria-label="Next month" data-month-nav="next">→</button>
+          </div>
+          <div class="calendar-grid" id="calendar-grid" aria-live="polite"></div>
+          <p class="calendar-note">Book at least 1 month in advance during busy season.</p>
+        </div>
+      </section>
+
+      <section id="booking" class="content-section">
+        <div class="container booking-layout">
+          <div class="booking-copy">
+            <p class="eyebrow">Booking</p>
+            <h2>Tell us about your event</h2>
+            <p>
+              Share your event preferences and we will help suggest the right package,
+              add-ons, and timeline for your celebration.
+            </p>
+          </div>
+
+          <div class="booking-card">
+            <form id="booking-form" novalidate>
+              <div class="field-grid">
+                <label>
+                  <span>Name</span>
+                  <input type="text" name="name" required placeholder="Your name" />
+                </label>
+                <label>
+                  <span>Phone</span>
+                  <input type="tel" name="phone" required placeholder="Phone number" />
+                </label>
+              </div>
+
+              <label>
+                <span>Event type</span>
+                <select name="eventType" id="event-type-select" required></select>
+              </label>
+
+              <div class="field-grid">
+                <label>
+                  <span>Date</span>
+                  <input type="date" name="date" id="booking-date" required />
+                </label>
+                <label>
+                  <span>Add-ons</span>
+                  <div id="package-options" class="checkbox-list"></div>
+                </label>
+              </div>
+
+              <label>
+                <span>Notes</span>
+                <textarea name="message" rows="4" placeholder="Tell us about your theme, date, guest count, and any special requests."></textarea>
+              </label>
+
+              <!-- Live Quote Summary Box -->
+              <div id="live-quote-box" class="quote-summary-box">
+                <div class="quote-label">Estimated Quote Summary</div>
+                <div class="quote-details">
+                  <span id="quote-package-name">Selected Package: —</span>
+                  <span id="quote-total-price" class="quote-price">₹0</span>
+                </div>
+                <div id="quote-custom-note" class="quote-custom-note hidden">+ custom quote for selected add-ons</div>
+              </div>
+
+              <div class="fine-print">
+                25% advance payment required to confirm booking. Advance is non-refundable on cancellation.
+              </div>
+
+              <button type="submit" class="button button-primary full-width" id="submit-button">
+                Submit booking request
+              </button>
+            </form>
+
+            <div id="booking-success" class="success-card hidden" aria-live="polite">
+              <div class="success-icon">✓</div>
+              <h3>Thanks! Your request is received.</h3>
+              <p id="booking-advance-text">We'll contact you shortly to confirm and collect the advance.</p>
+              <div id="booking-id-text" class="booking-id-badge"></div>
+              <button type="button" class="button button-secondary" data-reset-form>
+                Make another request
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="status" class="content-section alt-bg">
+        <div class="container section-heading center">
+          <p class="eyebrow">Track Request</p>
+          <h2>Check booking status</h2>
+        </div>
+        <div class="container lookup-wrapper">
+          <div class="lookup-card">
+            <form id="lookup-form" novalidate>
+              <div class="field-grid lookup-grid">
+                <label>
+                  <span>Booking ID</span>
+                  <input type="text" id="lookup-id-input" placeholder="Enter numeric Booking ID (e.g. 1758216600000)" required />
+                </label>
+                <div class="lookup-btn-wrapper">
+                  <button type="submit" class="button button-primary" id="lookup-button">
+                    Check Status
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div id="lookup-result" class="lookup-result hidden" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="content-section">
+        <div class="container section-heading center">
+          <p class="eyebrow">Frequently Asked Questions</p>
+          <h2>Everything you need to know</h2>
+        </div>
+        <div class="container faq-container" id="faq-container"></div>
+      </section>
+
+      <section id="contact" class="content-section contact-section">
+        <div class="container contact-grid">
+          <div class="contact-card">
+            <p class="eyebrow">About / Contact</p>
+            <h2>Book with confidence</h2>
+            <ul class="contact-list">
+              <li><strong>Address:</strong> 6-63, Market Centre, Chellaru, Amalapuram, 533261</li>
+              <li><strong>Phone:</strong> <a href="tel:9848593882">9848593882</a>, <a href="tel:9492909727">9492909727</a></li>
+              <li><strong>Email:</strong> <a href="mailto:kprasannakumar330@gmail.com">kprasannakumar330@gmail.com</a></li>
+              <li><strong>Hours:</strong> Every day, 6 AM–10 PM</li>
+            </ul>
+            <p class="small-note">Photography not offered directly, but we can refer a trusted photographer.</p>
+          </div>
+
+          <div class="map-card" aria-label="Map placeholder">
+            <div class="map-placeholder">
+              <span>Map location</span>
+              <strong>Amalapuram, Andhra Pradesh</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Quick WhatsApp Floating Button (Separate from chat widget) -->
+    <div id="whatsapp-float" class="whatsapp-float-wrapper">
+      <a id="whatsapp-float-btn" class="whatsapp-float-btn" href="https://wa.me/919848593882?text=Hi%2C%20I'm%20interested%20in%20booking%20decoration%20services" target="_blank" rel="noopener" aria-label="Quick WhatsApp Enquiry">
+        <span class="wa-icon">💬</span>
+        <span class="wa-text">WhatsApp Enquiry</span>
+      </a>
+    </div>
+
+    <div class="chat-widget" data-chat-widget>
+      <button class="chat-toggle" type="button" aria-expanded="false" aria-label="Open chat" data-chat-open>
+        <span class="chat-icon">💬</span>
+      </button>
+
+      <div class="chat-panel" aria-live="polite">
+        <div class="chat-header">
+          <div>
+            <strong>🎉 PR Decorations AI</strong>
+            <small>Your decoration assistant</small>
+          </div>
+          <button type="button" class="chat-close" data-chat-close aria-label="Close chat">×</button>
+        </div>
+
+        <div class="chat-body" id="chat-body">
+          <div class="message bot">
+            Hi! 👋<br>I'm the PR Decorations AI Assistant.<br>How can I help you today?
+          </div>
+        </div>
+
+        <div class="chat-suggestions">
+          <button type="button" class="chip" data-suggestion="Marriage package">Marriage package</button>
+          <button type="button" class="chip" data-suggestion="Birthday decoration budget">Birthday decoration</button>
+          <button type="button" class="chip" data-suggestion="Availability for next month">Availability</button>
+        </div>
+
+        <form id="chat-form" class="chat-form">
+          <input type="text" id="chat-input" placeholder="Type your question..." aria-label="Type your question" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+# Environment secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# ChromaDB persisted data — NOT ignored; committed to repo so Render's
+# ephemeral filesystem has the pre-built vector store at startup.
+# chroma_db/   <-- intentionally unignored
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Node.js dependencies — never commit node_modules
+node_modules/
+
+# Runtime upload files (user-submitted content)
+uploads/
+
+# OS metadata
+.DS_Store
+Thumbs.db

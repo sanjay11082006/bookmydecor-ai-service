@@ -1,0 +1,27 @@
+{
+  "name": "bookmydecor-backend",
+  "version": "2.1.0",
+  "description": "Backend API for BookMyDecor — PR Decorations booking system (JSON file storage)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "booking",
+    "decorations",
+    "events"
+  ],
+  "author": "PR Decorations",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.127.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "multer": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

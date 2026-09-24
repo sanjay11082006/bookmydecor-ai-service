@@ -1,0 +1,102 @@
+PR DECORATIONS — BOOKING RULES AND POLICIES
+
+
+ADVANCE BOOKING:
+
+Customers should book at least 1 month in advance,
+especially during busy or peak seasons.
+
+
+CALENDAR AVAILABILITY:
+
+The booking calendar uses the following indication:
+
+- White = Available
+- Red = Already Booked
+
+The chatbot should use the live booking system/database
+to determine whether a specific date is currently available.
+
+The static RAG knowledge should not be used to answer
+real-time availability questions.
+
+
+ADVANCE PAYMENT:
+
+A 25% advance payment is required to confirm any booking.
+
+
+CANCELLATION POLICY:
+
+If a booking is cancelled, the advance payment already paid
+is NOT refunded.
+
+
+ADD-ON FLEXIBILITY:
+
+Add-ons can be combined with services based on the
+customer's requirements.
+
+Examples include:
+- Cold Fires
+- Smoke Effect
+- Paper Shots
+- Car Entry
+- Royal Entry
+- Catering
+- Flowers
+- Traveling / Travel Charges
+
+
+PHOTOGRAPHY:
+
+PR Decorations does not provide photography directly.
+
+A known/trusted external photographer can be referred
+to the customer on request.
+
+
+PRICING RULE:
+
+All service prices listed by PR Decorations are starting
+prices unless a specific price or range is stated.
+
+Final pricing varies according to:
+- Customized themes
+- Customer requirements
+- Decoration preferences
+- Guest count where applicable
+- Selected add-ons
+- Travel distance where applicable
+
+
+UNCONFIRMED INFORMATION:
+
+The following information has not yet been confirmed
+by the business:
+
+- Accepted payment methods
+- Discount policy
+- Rescheduling policy
+- Exact service/travel area
+
+
+CHATBOT RULE:
+
+If a customer asks about information that has not been
+confirmed, the chatbot should not guess.
+
+The chatbot should respond that the information is not
+currently available and ask the customer to contact
+PR Decorations directly.
+
+
+SOURCE:
+
+Information collected directly from the PR Decorations owner.
+
+
+STATUS:
+
+Confirmed business rules, except the items explicitly
+marked as unconfirmed.

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Cold Fires",
+    "price": "₹10,000–₹50,000",
+    "notes": "Bundled range shared with smoke, paper shots, car entry, and royal entry."
+  },
+  {
+    "id": 2,
+    "name": "Smoke Effect",
+    "price": "₹10,000–₹50,000",
+    "notes": "Bundled range."
+  },
+  {
+    "id": 3,
+    "name": "Paper Shots",
+    "price": "₹10,000–₹50,000",
+    "notes": "Bundled range."
+  },
+  {
+    "id": 4,
+    "name": "Car Entry",
+    "price": "₹10,000–₹50,000",
+    "notes": "For birthday kid."
+  },
+  {
+    "id": 5,
+    "name": "Royal Entry",
+    "price": "₹10,000–₹50,000",
+    "notes": "Bundled range."
+  },
+  {
+    "id": 6,
+    "name": "Catering",
+    "price": "₹10,000–₹10,00,000",
+    "notes": "Depending on guest count and menu."
+  },
+  {
+    "id": 7,
+    "name": "Traveling",
+    "price": "₹1,500–₹50,000",
+    "notes": "Depending on distance to venue."
+  },
+  {
+    "id": 8,
+    "name": "Mixed Flowers",
+    "price": "₹15,000",
+    "notes": ""
+  },
+  {
+    "id": 9,
+    "name": "Original Flowers",
+    "price": "₹20,000",
+    "notes": "Per session."
+  },
+  {
+    "id": 10,
+    "name": "Duplicate Flowers",
+    "price": "₹5,000",
+    "notes": "Artificial flowers."
+  }
+]

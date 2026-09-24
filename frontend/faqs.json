@@ -1,0 +1,32 @@
+[
+  {
+    "id": "faq-1",
+    "question": "How much advance payment is required to confirm a booking?",
+    "answer": "A 25% advance payment is required to confirm your booking. The remaining amount can be settled on or before the event date. Please note that the advance is non-refundable upon cancellation."
+  },
+  {
+    "id": "faq-2",
+    "question": "What is your cancellation and rescheduling policy?",
+    "answer": "The 25% booking advance is non-refundable on cancellation. However, if you need to reschedule your event, we will gladly transfer your booking to a new available date if notified at least 7 days prior."
+  },
+  {
+    "id": "faq-3",
+    "question": "How far in advance should I book my decoration setup?",
+    "answer": "We recommend booking at least 1 month in advance during peak wedding and festival seasons. For smaller home or birthday events, booking 1–2 weeks in advance is usually sufficient."
+  },
+  {
+    "id": "faq-4",
+    "question": "What are your business hours and service areas?",
+    "answer": "Our team operates daily from 6 AM to 10 PM. We are based in Amalapuram, Andhra Pradesh, and serve all surrounding areas."
+  },
+  {
+    "id": "faq-5",
+    "question": "Do you provide photography or videography services?",
+    "answer": "Please contact us directly for this. While we do not offer photography in-house, we are happy to recommend trusted local professional photographers."
+  },
+  {
+    "id": "faq-6",
+    "question": "Can I request custom themes, colors, or backdrops not listed?",
+    "answer": "Please contact us directly for this. We specialize in custom event styling and can tailor flower arrangements, lighting, and stage setups to your exact vision."
+  }
+]

@@ -1,0 +1,36 @@
+SERVICE:
+Marriage Package
+
+BUSINESS:
+PR Decorations
+
+STARTING PRICE:
+₹80,000–₹3,00,000
+
+BASIC PACKAGE INCLUDES:
+- Haldi
+- Sangeet
+- Bride-to-be setup
+
+CUSTOMIZATION:
+Customers can request customized themes and decoration styles.
+
+CUSTOMER REQUIREMENTS:
+Prices vary according to customized themes and the customer's required add-ons.
+
+AVAILABLE ADD-ONS:
+- General add-ons — available based on customer requirement; refer to the Add-ons knowledge file for confirmed options and pricing.
+
+PRICING NOTE:
+The marriage package is documented as a range from ₹80,000 to ₹3,00,000 depending on customer requirements.
+
+The final price varies according to customer requirements and selected add-ons.
+
+GENERAL ADD-ON RULE:
+Add-ons can be combined with services based on customer requirements.
+
+SOURCE:
+Information collected directly from the PR Decorations owner.
+
+STATUS:
+Confirmed
