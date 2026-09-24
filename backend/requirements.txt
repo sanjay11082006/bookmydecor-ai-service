@@ -1,8 +1,18 @@
+# ── CPU-only PyTorch index ────────────────────────────────────────────────────
+# Forces pip to pull the lean CPU wheel (~200 MB) instead of the default
+# CUDA bundle (~2.5 GB) which exceeds Render's free-tier disk/memory limits.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# ── Core ML / RAG stack ───────────────────────────────────────────────────────
+torch
 sentence-transformers>=2.2.2
 chromadb>=0.4.22
+
+# ── API framework ─────────────────────────────────────────────────────────────
 fastapi>=0.100.0
 uvicorn[standard]>=0.23.0
 pydantic>=2.0.0
-huggingface-hub>=0.20.0
-python-dotenv>=1.0.0
+
+# ── LLM & utilities ───────────────────────────────────────────────────────────
 groq>=0.9.0
+python-dotenv>=1.0.0
