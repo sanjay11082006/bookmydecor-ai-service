@@ -17,14 +17,18 @@ from prompt import build_prompt
 # ------------------------------------------------------------------
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-GROQ_MODEL = os.getenv("GROQ_MODEL", "compound-beta-mini")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 # Safe debugging — never print the actual key
 print("Groq key loaded:", bool(GROQ_API_KEY))
+print("Groq key length:", len(GROQ_API_KEY) if GROQ_API_KEY else 0)
 print("Groq model:", GROQ_MODEL)
 
-# Initialize the Groq Client
-client = Groq(api_key=GROQ_API_KEY)
+if not GROQ_API_KEY:
+    print("[STARTUP ERROR] GROQ_API_KEY is not set. Set it as an environment variable on the server.")
+
+# Initialize the Groq Client (will fail gracefully per-request if key is missing)
+client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
 
 def format_context(chunks):
     """Formats the raw chunks into a string for the prompt."""
@@ -75,11 +79,19 @@ def get_response(user_question):
     ]
 
     # 3. Generate response using the Groq API
+    if client is None:
+        error_msg = "[CONFIG ERROR] GROQ_API_KEY is missing from environment variables."
+        print(error_msg)
+        return {
+            "answer": f"⚠️ {error_msg} Please set GROQ_API_KEY on the server.",
+            "chunks": chunks
+        }
+
     try:
         response = client.chat.completions.create(
             model=GROQ_MODEL,
             messages=messages,
-            max_tokens=250,
+            max_tokens=300,
             temperature=0.1,  # Low temperature for factual RAG responses
         )
         
@@ -90,9 +102,15 @@ def get_response(user_question):
             "chunks": chunks
         }
     except Exception as e:
-        # Print the ACTUAL error for debugging — do not hide it
-        print(f"[GROQ ERROR] {type(e).__name__}: {e}")
+        # Log the EXACT error — critical for diagnosing production failures
+        error_type = type(e).__name__
+        error_detail = str(e)
+        print(f"[GROQ ERROR] {error_type}: {error_detail}")
+        print(f"[GROQ ERROR] Model used: {GROQ_MODEL}")
+        print(f"[GROQ ERROR] Key present: {bool(GROQ_API_KEY)}")
+
+        # Return a diagnostic message so you can see what went wrong in the network tab
         return {
-            "answer": "I'm sorry, my AI service is currently unavailable. Please contact PR Decorations directly.",
+            "answer": f"[GROQ ERROR — {error_type}] {error_detail}",
             "chunks": chunks
         }
